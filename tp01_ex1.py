@@ -36,6 +36,6 @@ print("\n")
 annee = int(input("Saisissez une année : "))
 
 if annee % (4 or 400) == 0 and annee % 100 != 0:
-    print(annee, "est bissextile")
+    print("L'année saisie est bissextile")
 else:
-    print(annee, "n'est pas bissextile")
+    print("L'année saisie n'est pas bissextile")

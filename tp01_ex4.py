@@ -35,10 +35,10 @@ Ecrire l'algorithme permettant de saisir les données nécessaires
 
 ### Déclaration des variables
 
-age: int = 0
-annee_permis: int = 0
-accident: int = 0
-annee_assurance: int = 0
+age: int
+annee_permis: int
+accident: int
+assurance: int
 tarif_situation: str
 
 ### Initialisation des variables
@@ -46,31 +46,51 @@ tarif_situation: str
 age = int(input("Entrez l'âge : "))
 annee_permis = int(input("Entrez le nombre d'année de permis : "))
 accident = int(input("Entrez le nombre d'accidents : "))
-situation = " "
+assurance = int(input("Entrez le nombre d'années d'assurances : "))
+tarif_situation = ""
 
 ### Séquence d'opération
 
-# -25 ans et permis -2 ans
-if age <= 25 and annee_permis <= 2 and accident == 0:
+# Conducteur : - 25 ans , permis - 2 ans , 0 accident
+if age < 25 and annee_permis < 2 and accident == 0 and assurance < 5:
     tarif_situation = "Rouge"
+elif age < 25 and annee_permis < 2 and accident == 0 and assurance >= 5:
+    tarif_situation = "Orange" # fidélité du client
 else:
     tarif_situation = "Refusé"
 
-# - 25 ans et permis
-if age <= 25 and annee_permis >= 2 and accident == 0 or age >= 25 and annee_permis <= 2 and accident == 0:
-    tarif_situation = "Vert"
-elif accident == 1:
+
+# Conducteur : - 25 ans , permis + 2 ans OU + 25 ans , permis - 2 ans
+if age < 25 and annee_permis >= 2 and accident == 0 and assurance < 5 or age >= 25 and annee_permis < 2 and accident == 0 and assurance < 5:
     tarif_situation = "Orange"
-elif accident == 2:
+elif age < 25 and annee_permis >= 2 and accident == 0 and assurance >= 5 or age >= 25 and annee_permis < 2 and accident == 0 and assurance >= 5:
+    tarif_situation = "Vert" # fidélité du client
+elif age < 25 and annee_permis >= 2 and accident == 1 and assurance < 5 or age >= 25 and annee_permis < 2 and accident == 1 and assurance < 5:
     tarif_situation = "Rouge"
+elif age < 25 and annee_permis >= 2 and accident == 1 and assurance >= 5 or age >= 25 and annee_permis < 2 and accident == 1 and assurance >= 5:
+    tarif_situation = "Orange" # fidélité du client
 else:
     tarif_situation = "Refusé"
 
-# Fidélité des clients
-annee_assurance = int(input("Entrez le nombre d'années d'assurance : "))
-if annee_assurance >= 5:
-    tarif_situation = ""
+
+# Conducteur : + 25 ans , permis + 2 ans
+if age >= 25 and annee_permis >= 2 and accident == 0 and assurance < 5:
+    tarif_situation = "Vert"
+elif age >= 25 and annee_permis >= 2 and accident == 0 and assurance >= 5:
+    tarif_situation = "Bleu"
+elif age >= 25 and annee_permis >= 2 and accident == 1 and assurance < 5:
+    tarif_situation = "Orange"
+elif age >= 25 and annee_permis >= 2 and accident == 1 and assurance >= 5:
+    tarif_situation == "Vert"
+elif age >= 25 and annee_permis >= 2 and accident == 2 and assurance < 5:
+    tarif_situation = "Rouge"
+elif age >= 25 and annee_permis >= 2 and accident == 2 and assurance >= 5:
+    tarif_situation = "Orange"
+else:
+    tarif_situation = "Refusé"
+
 
 # Message spécifiant la situation du client
 print("Votre situation : ", tarif_situation)
+
 

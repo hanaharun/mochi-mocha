@@ -18,21 +18,21 @@ Programme calculant le niveau de risque cardiovasculaire.
 """
 ### Déclaration des variables
 
-age: int = 0
-sexe: str
 fumeur: str
 sport: str
-risque: int = 0
-
+age: int = 0
+sexe: str
+risque: int
 
 ### Initialisation des variables
 
 # Saisie d'utilisateur
 
-fumeur = input("Êtes-vous fumeur ? (oui ou non)")
-sport = input("Faîtes-vous du sport ? (oui ou non)")
+fumeur = input("Êtes-vous fumeur ? (oui ou non) ")
+sport = input("Faîtes-vous du sport ? (oui ou non) ")
 age = int(input("Quel est votre âge ? "))
 sexe = input("Quel est votre sexe ? (h ou f) ")
+risque = 0
 
 ### Séquence d'opération
 
