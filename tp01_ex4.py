@@ -56,12 +56,10 @@ if age < 25 and annee_permis < 2 and accident == 0 and assurance < 5:
     tarif_situation = "Rouge"
 elif age < 25 and annee_permis < 2 and accident == 0 and assurance >= 5:
     tarif_situation = "Orange" # fidélité du client
-else:
-    tarif_situation = "Refusé"
 
 
 # Conducteur : - 25 ans , permis + 2 ans OU + 25 ans , permis - 2 ans
-if age < 25 and annee_permis >= 2 and accident == 0 and assurance < 5 or age >= 25 and annee_permis < 2 and accident == 0 and assurance < 5:
+elif age < 25 and annee_permis >= 2 and accident == 0 and assurance < 5 or age >= 25 and annee_permis < 2 and accident == 0 and assurance < 5:
     tarif_situation = "Orange"
 elif age < 25 and annee_permis >= 2 and accident == 0 and assurance >= 5 or age >= 25 and annee_permis < 2 and accident == 0 and assurance >= 5:
     tarif_situation = "Vert" # fidélité du client
@@ -69,23 +67,21 @@ elif age < 25 and annee_permis >= 2 and accident == 1 and assurance < 5 or age >
     tarif_situation = "Rouge"
 elif age < 25 and annee_permis >= 2 and accident == 1 and assurance >= 5 or age >= 25 and annee_permis < 2 and accident == 1 and assurance >= 5:
     tarif_situation = "Orange" # fidélité du client
-else:
-    tarif_situation = "Refusé"
 
 
 # Conducteur : + 25 ans , permis + 2 ans
-if age >= 25 and annee_permis >= 2 and accident == 0 and assurance < 5:
+elif age >= 25 and annee_permis >= 2 and accident == 0 and assurance < 5:
     tarif_situation = "Vert"
 elif age >= 25 and annee_permis >= 2 and accident == 0 and assurance >= 5:
-    tarif_situation = "Bleu"
+    tarif_situation = "Bleu" # fidélité du client
 elif age >= 25 and annee_permis >= 2 and accident == 1 and assurance < 5:
     tarif_situation = "Orange"
 elif age >= 25 and annee_permis >= 2 and accident == 1 and assurance >= 5:
-    tarif_situation == "Vert"
+    tarif_situation == "Vert" # fidélité du client
 elif age >= 25 and annee_permis >= 2 and accident == 2 and assurance < 5:
     tarif_situation = "Rouge"
 elif age >= 25 and annee_permis >= 2 and accident == 2 and assurance >= 5:
-    tarif_situation = "Orange"
+    tarif_situation = "Orange" # fidélité du client
 else:
     tarif_situation = "Refusé"
 
